@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.779
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContinuumConcaveHull", "ContinuumConcaveHull\ContinuumConcaveHull.csproj", "{B523C581-FB8F-4095-809C-78A073DC912F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B523C581-FB8F-4095-809C-78A073DC912F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B523C581-FB8F-4095-809C-78A073DC912F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B523C581-FB8F-4095-809C-78A073DC912F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B523C581-FB8F-4095-809C-78A073DC912F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {789EA35C-949A-41F9-9CA3-26F3E5D76F64}
+	EndGlobalSection
+EndGlobal

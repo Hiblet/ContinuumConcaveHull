@@ -1,0 +1,218 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2020.1">
+  <Nodes>
+    <Node ToolID="2">
+      <GuiSettings Plugin="ContinuumBitmapReader.BitmapReader">
+        <Position x="186" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ContinuumBitmapReaderFieldNames>Filename</ContinuumBitmapReaderFieldNames>
+          <ContinuumBitmapReaderSelectedField>Filename</ContinuumBitmapReaderSelectedField>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Bitmap Reader</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="ContinuumBitmapReader.dll" EngineDllEntryPoint=".Net:ContinuumBitmapReader.BitmapReaderNetPlugin" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="54" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="1" />
+          <Fields>
+            <Field name="Filename" />
+          </Fields>
+          <Data>
+            <r>
+              <c>C:\Users\User\Documents\Visual Studio 2017\Projects\ContinuumConcaveHull\Images\StarPoints.bmp</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="306" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[RValue] == 0 AND [GValue] == 0 AND [BValue] == 0</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[RValue] == 0 AND [GValue] == 0 AND [BValue] == 0</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="ContinuumConcaveHull.ConcaveHull">
+        <Position x="438" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ContinuumConcaveHullGroupFieldNames>Filename,XCoord,YCoord,RValue,GValue,BValue,AlphaValue</ContinuumConcaveHullGroupFieldNames>
+          <ContinuumConcaveHullGroupField>
+          </ContinuumConcaveHullGroupField>
+          <ContinuumConcaveHullXFieldNames>Filename,XCoord,YCoord,RValue,GValue,BValue,AlphaValue</ContinuumConcaveHullXFieldNames>
+          <ContinuumConcaveHullXField>XCoord</ContinuumConcaveHullXField>
+          <ContinuumConcaveHullYFieldNames>Filename,XCoord,YCoord,RValue,GValue,BValue,AlphaValue</ContinuumConcaveHullYFieldNames>
+          <ContinuumConcaveHullYField>YCoord</ContinuumConcaveHullYField>
+          <ContinuumConcaveHullConcavity>90</ContinuumConcaveHullConcavity>
+          <ContinuumConcaveHullScaleFactor>NULL</ContinuumConcaveHullScaleFactor>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Concave Hull</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="ContinuumConcaveHull.dll" EngineDllEntryPoint=".Net:ContinuumConcaveHull.ConcaveHullNetPlugin" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.CreatePoints.CreatePoints">
+        <Position x="570" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Fields fieldX="ConcaveHull_Polygon_XCoord" fieldY="ConcaveHull_Polygon_YCoord" />
+          <Mode>Double</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxCreatePoints" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.PolyBuild.PolyBuild">
+        <Position x="714" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SpatialObj field="Centroid" />
+          <GroupField field="ConcaveHull_Polygon_Group" />
+          <BuildType>SequencePolygon</BuildType>
+          <SequenceField field="ConcaveHull_Polygon_Sequence" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxPolyBuild" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="810" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\User\AppData\Local\Temp\Engine_18716_4e45f0faeca14cfe8a593575e9ed7169_\Engine_18716_7945e1aeb2ed4e44aa3f0730108e6f84_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Map</DefaultTab>
+              <Hints>
+                <Map>
+                  <BaseMap>[No Base Map]</BaseMap>
+                </Map>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="True" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Test01_BasicFunction</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
